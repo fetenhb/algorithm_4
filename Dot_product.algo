@@ -1,0 +1,16 @@
+PROCEDURE sort(VAR tab : ARRAY_OF INTEGER)
+VAR
+    i : INTEGER;
+    j : INTEGER;
+    temp : INTEGER;
+BEGIN
+    FOR i FROM 1 TO tab.length-1 STEP 1 DO
+        temp := tab [i];
+        j := i-1; 
+        WHILE (j >= 0 AND tab[j] > temp) DO
+            tab[j+1] := tab[j];
+            j := j-1;
+        END_WHILE
+        tab[j+1] = temp;
+    END_FOR
+END
